@@ -1,0 +1,26 @@
+<ng-container *ngIf="control.dirty || control.touched">
+    <div class="invalid-feedback" *ngIf="control.hasError('required')">
+      <i class="fa fa-exclamation-triangle"></i> Este campo es obligatorio
+    </div>
+
+    <div class="invalid-feedback" *ngIf="control.hasError('malformedMail')">
+      <i class="fa fa-exclamation-triangle"></i> Email incorrecto
+    </div>
+
+    <div class="invalid-feedback" *ngIf="control.hasError('missingArroba')">
+      <i class="fa fa-exclamation-triangle"></i> Que se te olvida la arroba. Vaya desgraciado.
+    </div>
+
+    <div class="invalid-feedback" *ngIf="control.hasError('minlength')">
+      <i class="fa fa-exclamation-triangle"></i> Oye, que las letras son gratis eh. Joder, vaya rata.
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="group?.dirty || group?.touched">
+    <div
+      class="invalid-feedback"
+      *ngIf="control.valid && group?.hasError('passwordMismatch')"
+    >
+      <i class="fa fa-exclamation-triangle"></i> El password y la confirmación no coinciden.
+    </div>
+  </ng-container>

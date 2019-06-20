@@ -1,16 +1,33 @@
-<agm-map style="height: 300px" [latitude]="userLat" [longitude]="userLng">
-  <agm-marker [latitude]="51.45" [longitude]="7.75">
-    <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
-      <ng-template>
-        My first Snazzy Info Window!
-      </ng-template>
-    </agm-snazzy-info-window>
-  </agm-marker>
-  <agm-marker [latitude]="51.4" [longitude]="7.7">
-    <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
-      <ng-template>
-        My first Snazzy Info Window2!
-      </ng-template>
-    </agm-snazzy-info-window>
-  </agm-marker>
+<div class="p-5">
+<agm-map style="height: 100vh; border: 2px" [latitude]="searchService.searchData.coordinates.lat" [longitude]="searchService.searchData.coordinates.lng" [zoom]=16>
+  <agm-marker [latitude]="searchService.searchData.coordinates.lat" [longitude]="searchService.searchData.coordinates.lng"></agm-marker>
+  <agm-snazzy-info-window [maxWidth]="800" [closeWhenOthersOpen]="true">
+    <ng-template>
+      <h2 style="font-family: Courier;">Aquí estás tú</h2>
+    </ng-template>
+  </agm-snazzy-info-window>
+  <div *ngFor="let local of searchService.searchData.concerthallsData">
+    <agm-marker [latitude]="local.lat" [longitude]="local.lng">
+      <agm-snazzy-info-window [maxWidth]="800" [closeWhenOthersOpen]="true">
+        <ng-template>
+          <h5 class="card-title" style="font-family: Courier"> <strong> {{ local.full_name }} </strong></h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ local.description }}</h6>
+          <div *ngFor="let concert of searchService.searchData.concertsData">
+            <div *ngIf="local.id_localhall === concert.id_localhall">
+              <div class="card bg-light mb-3" style="max-width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ concert.band }}</h5>
+                    <p class="card-text">Fecha: {{ concert.date | date:'dd/MM/yy, hh:mm a' }}</p>
+                    <p class="card-text" *ngIf="concert.tickets">Entradas: {{ concert.tickets }}</p>
+                    <p class="card-text" *ngIf="concert.style">Estilo: {{ concert.style }}</p>
+                    <p class="card-text" *ngIf="concert.description">Descripción: {{ concert.description }}</p>
+                  </div>
+            </div>
+            </div>
+            </div>
+        </ng-template>
+      </agm-snazzy-info-window>
+    </agm-marker>
+  </div>
 </agm-map>
+</div>

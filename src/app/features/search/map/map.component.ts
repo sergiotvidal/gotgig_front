@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../../../core/services/search.service';
 
 @Component({
   selector: 'app-map',
@@ -7,11 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
-  userLat: number;
-  userLng: number;
-
-  constructor() {
-
+  constructor(public searchService: SearchService) {
   }
 
   ngOnInit() {

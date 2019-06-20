@@ -1,0 +1,26 @@
+<div class="row justify-content-center">
+  <div class="row col-8 justify-content-center" style="width: 100%">
+    <div class="input-group mb-3 mt-3 w-75 col-10" id="searchbar">
+      <div class="input-group-prepend" >
+        <!-- <span class="input-group-text"> -->
+          <button (click)='search()'>
+            <i class="fa fa-search"></i>
+          </button>
+        <!-- </span> -->
+      </div>
+      <input
+      type="text"
+      class="form-control"
+      placeholder="¿Dónde estás?"
+      #searchText
+      />
+    </div>
+    <div class="row justify-content-end col-10 text-right">
+      <p style="font-family: Courier; font-size: 0.75rem">
+        ¿Quieres que tu local aparezca en el mapa?
+        <a (click)="formsService.registerOpen()" style="color: darkblue">Registrate</a> o
+        <a (click)="formsService.loginOpen()" style="color: darkblue">logueate</a> si ya estás registrado
+      </p>
+    </div>
+  </div>
+</div>

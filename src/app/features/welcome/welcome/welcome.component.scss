@@ -1,0 +1,21 @@
+:host {
+  .grid-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: auto;
+    height: 100vh;
+    max-height: 100%;
+  }
+ }
+
+// img {
+//   max-width: 100%;
+//   height: auto;
+// }
+.container-fluid {
+  // background-image: url("https://s3-eu-west-1.amazonaws.com/erasmus-magazine/app/uploads/sites/8/2017/05/09210803/concert-sillohette.jpg");
+  display: block;
+  height: auto;
+  width: 100vw;
+  background: #fdd007
+}

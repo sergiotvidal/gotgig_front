@@ -1,0 +1,20 @@
+<nav class="navbar navbar-dark" style="background-color: black;">
+    <a class="navbar-brand ml-3 justify-content-left" href="#" style="color: #fdd007; font-family: GothamHTFBold;">
+      <i></i> GOTGIG</a>
+      <div *ngIf="authservice.authInfo.accessToken">
+      <div *ngFor="let organization of userService.userData.organizationData">
+      <h5 class="justify-content-right mt-1 mr-3" style="font-family: Courier; font-size: 0.7rem; color: #fdd007">
+      ¡Bienvenido
+      <a style="font-family: Courier; font-size: 0.7rem; color: #ccaa13" [routerLink]="['/user']" routerLinkActive="router-link-active" >{{ organization.full_name }}!</a>
+    </h5>
+    </div>
+    </div>
+    <div #elseBlock>
+        <h5 class="justify-content-right mt-1 mr-3" style="font-family: Courier; font-size: 0.7rem; color: #fdd007">
+        ¿Quieres que tu local salga en el mapa?
+        <a style="font-family: Courier; font-size: 0.7rem; color: #ccaa13" href="">Registrate
+        </a> o <a style="font-family: Courier; font-size: 0.7rem; color: #ccaa13" href="">logueate</a>
+      </h5>
+    </div>
+</nav>
+<hr style="height:15px;border:none;color:#fdd007;background-color:#fdd007; margin:0;" />

@@ -1,0 +1,18 @@
+    <form
+    [formGroup]="loginForm"
+    (ngSubmit)="login()">
+    <button type="button" class="close" (click)="formsService.loginClose()">&times;</button>
+        <div class="form-group">
+          <label style="font-family: Courier">EMAIL</label>
+            <input type="text" class="form-control" formControlName="email" class="input">
+            <div class="line-box"></div>
+          <app-validation-messages [control]="loginForm.get('email')"></app-validation-messages>
+        </div>
+        <div class="form-group">
+        <label style="font-family: Courier">PASSWORD</label>
+          <input type="password" class="form-control" formControlName="password" class="input">
+          <div class="line-box"></div>
+        <app-validation-messages [control]="loginForm.get('password')"></app-validation-messages>
+        </div>
+        <button type="submit" id="loginbutton">ENVIAR</button>
+      </form>
