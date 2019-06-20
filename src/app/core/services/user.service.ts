@@ -38,4 +38,18 @@ export class UserService {
   deleteConcerthall(idConcerthall) {
     return this.http.delete(`${environment.apiBaseUrl}/user/concerthall/${idConcerthall}`)
   }
+
+  addConcerthall(data) {
+
+    return this.http
+    .post(`${environment.apiBaseUrl}/user/concerthall`, {
+      full_name: data.full_name,
+      description: data.description,
+      website: data.website,
+      phone_number: data.phone_number,
+      address: data.street + ' ' + data.number + ' ' +  data.zip + ' ' + data.city,
+    })
+
+  }
+
 }
