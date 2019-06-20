@@ -18,7 +18,7 @@ import { AppInitializerModule } from './app-initializer.module';
     AppInitializerModule,
     HttpClientModule,
     LayoutModule,
-    CoreModule
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

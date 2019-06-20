@@ -30,4 +30,12 @@ export class UserService {
   deleteUserOrganization() {
     return this.http.delete(`${environment.apiBaseUrl}/user/organization`);
   }
+
+  deleteConcert(idConcert,idConcerthall){
+    return this.http.delete(`${environment.apiBaseUrl}/user/concert/${idConcerthall}/${idConcert}`);
+  }
+
+  deleteConcerthall(idConcerthall) {
+    return this.http.delete(`${environment.apiBaseUrl}/user/concerthall/${idConcerthall}`)
+  }
 }

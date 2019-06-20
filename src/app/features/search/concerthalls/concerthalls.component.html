@@ -3,10 +3,10 @@
     <div class="card border-0 justify-content-center" style="width: 18rem">
       <div class="card-body justify-content-center">
         <h5 class="card-title" style="font-family: Courier"><i class="fas fa-map-marker"></i> <strong> {{ local.full_name }} </strong></h5>
-        <h6 class="card-subtitle mb-2 text-muted">A {{ local.distance }} km.</h6>
+        <h6 class="card-subtitle mb-2 text-muted">A {{ local.distance.toFixed(2) }} km.</h6>
         <p class="card-text">{{ local.address }}</p>
         <p class="card-text">Tlfn. {{ local.phone_number }}</p>
-        <a href="{{ local.website }}" class="card-link d-block" style="color: black">{{ local.website }}</a>
+        <a href="{{ local.website }}" target="_blank" class="card-link d-block" style="color: black">{{ local.website }}</a>
         <a href="#" class="card-link" style="color: black">Centrar en el mapa</a>
       </div>
     </div>
