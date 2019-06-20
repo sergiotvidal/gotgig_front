@@ -13,13 +13,6 @@ export class WelcomeComponent implements OnInit {
   constructor(public formsService: FormsService, private searchService: SearchService, private router: Router) { }
 
   ngOnInit() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        locationData => {
-          this.searchService.search('', locationData.coords.latitude, locationData.coords.longitude).subscribe(),
-          this.router.navigate(['/search']);
-        }
-      );
-    }
+
   }
 }

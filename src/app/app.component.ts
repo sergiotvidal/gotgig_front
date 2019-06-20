@@ -9,13 +9,13 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
 
-  constructor (private searchService: SearchService, private router: Router) {}
+  constructor(private searchService: SearchService, private router: Router) {}
   title = 'gotgigfront';
 
   public lat;
   public lng;
 
-  public ngOnInit(): void {
+  public ngOnInit() {
     this.getLocation();
   }
 

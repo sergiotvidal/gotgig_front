@@ -1,5 +1,8 @@
+    <div class="justify-content-center"style="width:100%;"
+    >
     <form
     [formGroup]="loginForm"
+    [appMarkAsTouched]="loginForm"
     (ngSubmit)="login()">
     <button type="button" class="close" (click)="formsService.loginClose()">&times;</button>
         <div class="form-group">
@@ -16,3 +19,5 @@
         </div>
         <button type="submit" id="loginbutton">ENVIAR</button>
       </form>
+    </div>
+

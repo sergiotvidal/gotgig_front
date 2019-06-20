@@ -1,17 +1,20 @@
 form {
-  width: 60%;
-  margin: 60px auto;
+  width: 30%;
+  margin: 10px auto;
   background: #efefef;
-  padding: 60px 120px 80px 120px;
+  padding: 30px 20px 30px 20px;
   text-align: center;
-  -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
-  box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+  // -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+  // box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
   background: linear-gradient(180deg,#fff 0,#fff9e7 100%);
+  border: 3px;
+  border-color: rgb(189, 155, 3);
+
 }
 label {
   display: block;
   position: relative;
-  margin: 40px 0px;
+  margin: 10px 0px;
 }
 .label-txt {
   position: absolute;

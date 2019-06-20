@@ -9,9 +9,35 @@ html, body {
   src:url(assets/fonts/GothamHTF-Bold.otf);
 }
 
+$success: #3e4d59;
+$danger: #cc330d;
+$info: #5c8f94;
+$warning: #6e9fa5;
+$light: #eceeec;
+$dark: #1e2b37;
+$enable-gradients: false;
+$spacer: 1rem;
+$border-width: 3px;
+$btn-border-radius: 0.25rem;
+$enable-responsive-font-sizes: true;
+
 @import '~node_modules/bootstrap/scss/bootstrap.scss';
 
+.ng-touched.ng-invalid {
+  @extend .is-invalid;
+}
+
+.ng-touched.ng-valid {
+  @extend .is-valid;
+}
+
+.is-invalid,
+.is-valid {
+  .invalid-feedback {
+    display: block;
+  }
+}
 
 a {
   cursor: pointer !important;
- }
+}

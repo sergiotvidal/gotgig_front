@@ -1,12 +1,13 @@
-<div class="card-img-overlay"  style="width: 100rem;">
+    <div class="justify-content-center"style="width:100%;">
     <form
     [formGroup]="registerForm"
+    [appMarkAsTouched]="registerForm"
     (ngSubmit)="register()">
     <button type="button" class="close" (click)="formsService.registerClose()">&times;</button>
 
         <div class="form-group">
           <label style="font-family: Courier">EMAIL</label>
-            <input type="text" class="form-control" formControlName="email" class="input">
+            <input class="form-control" type="text" formControlName="email" class="input">
             <div class="line-box">
             </div>
           <app-validation-messages [control]="registerForm.get('email')"></app-validation-messages>

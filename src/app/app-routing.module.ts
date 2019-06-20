@@ -14,6 +14,10 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       {
+        path: 'register',
+        loadChildren: () => import('./features/register/register.module').then(mod => mod.RegisterModule)
+      },
+      {
         path: 'login',
         loadChildren: () => import('./features/login/login.module').then(mod => mod.LoginModule)
       },
