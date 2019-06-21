@@ -17,17 +17,6 @@ import { NgModule } from '@angular/core';
 })
 export class UserFormsComponent {
 
-  concerthallForm: FormGroup = this.fb.group({
-    full_name: ['', [Validators.minLength(2), Validators.required]],
-    street: ['', [Validators.required]],
-    number: ['', [Validators.required]],
-    city: ['', [Validators.required]],
-    zip: ['', [Validators.required]],
-    phone_number: [''],
-    website: [''],
-    description: ['', [Validators.minLength(20)]]
-  });
-
   showForm = true;
   hideData = false;
   constructor(public userService: UserService, private router: Router,
@@ -37,20 +26,8 @@ export class UserFormsComponent {
   }
 
   showConcerthallForm() {
-    this.hideData = true;
-    this.showForm = false;
-    this.addConcerthall();
-  }
-
-  addConcerthall() {
-    const { full_name, street, number, zip, website,  phone_number, description, city } =
-     this.concerthallForm.value;
-
-    if (this.concerthallForm.valid) {
-      this.userService.addConcerthall({ full_name, street, number, zip, website,  phone_number, description, city  }).subscribe(() => {
-          this.router.navigate(['/user'])
-      });
-    }
+    this.hideData = !this.hideData;
+    this.showForm = !this.showForm;
   }
 
   editConcerthall() {
@@ -67,6 +44,6 @@ export class UserFormsComponent {
 
   deleteConcert(idConcert,idConcerthall) {
     this.userService.deleteConcert(idConcert, idConcerthall).subscribe();
-    // this.router.navigate(['/user'])
+    this.router.navigate(['/user'])
   }
 }

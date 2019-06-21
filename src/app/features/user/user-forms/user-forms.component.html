@@ -1,8 +1,8 @@
-
 <div class="container" >
   <div class="row">
-    <div class="col-12">
-      {{ userService.userData.organizationData[0].full_name }} <button (click)="showConcerthallForm()" type="button" class="btn btn-success"> <i class="fas fa-plus"></i>Añadir Sala</button>
+    <div class="col-8" style="padding-bottom: 1rem; font-family: GothamHTFBold;">
+      <h3> {{ userService.userData.organizationData[0].full_name }}
+      <button (click)="showConcerthallForm()" type="button" class="btn btn-success float-right mt-2"> <i class="fas fa-plus"></i> Sala</button></h3>
     </div>
   </div>
   <div [hidden]="!showForm"  *ngFor="let local of userService.userData.concerthallsData">
@@ -22,14 +22,14 @@
             <li>Teléfono: {{ local.phone_number }}</li>
             <li>Descripción del local: {{ local.description }}</li>
           </ul>
-        <button type="button" class="btn btn-success btn-sm"><i class="fas fa-plus"></i>Añadir Concierto </button>
+        <button type="button" class="btn btn-success btn-sm float-right"><i class="fas fa-plus"></i> Concierto </button>
       </div>
       <div class="col-4" style="background-color: rgb(241, 241, 241)">
           <div *ngFor="let concert of userService.userData.concertsData">
             <div *ngIf="local.id_localhall === concert.id_localhall">
               <div class="card bg-light mb-3" style="max-width: 18rem;">
                   <div class="card-body">
-                    <h5 class="card-title">{{ concert.full_name }}
+                    <h5 class="card-title" style="overflow: hidden">{{ concert.full_name }}
                       <span (click)="deleteConcert(concert.id_concert, concert.id_localhall)" class="float-right" style="cursor: pointer" [routerLink]="['/user']" routerLinkActive="router-link-active">
                         <i class="fas fa-trash fa-sm"></i></span>
                         <span (click)="editConcert()" style="cursor: pointer;padding-right: 1rem" class="float-right">
@@ -46,70 +46,12 @@
     </div>
   </div>
 </div>
+
 <div class="container">
-  <div class="row">
-    <div class="col-12" [hidden]="!hideData">
-  <form
-  [formGroup]="concerthallForm"
-  (ngSubmit)="addConcerthall()">
-      <div class="form-group">
-      <label style="font-family: Courier">NOMBRE LOCAL</label>
-        <input type="text" class="form-control" formControlName="full_name" class="input">
-        <div class="line-box">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label style="font-family: Courier">CALLE</label>
-          <input type="text" class="form-control" formControlName="street" class="input">
-          <div class="line-box">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label style="font-family: Courier">NÚMERO</label>
-            <input type="number" class="form-control" formControlName="number" class="input">
-            <div class="line-box">
-            </div>
-        </div>
-
-        <div class="form-group">
-          <label style="font-family: Courier">ZIP</label>
-            <input type="number" class="form-control" formControlName="zip" class="input">
-            <div class="line-box">
-            </div>
-        </div>
-
-      <div class="form-group">
-      <label style="font-family: Courier">CIUDAD</label>
-        <input type="text" class="form-control" formControlName="city" class="input">
-        <div class="line-box">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label style="font-family: Courier">WEB</label>
-          <input type="text" class="form-control" formControlName="website" class="input">
-          <div class="line-box">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label style="font-family: Courier">TELÉFONO</label>
-            <input type="text" class="form-control" formControlName="phone_number" class="input">
-            <div class="line-box">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label style="font-family: Courier">DESCRIPCIÓN</label>
-              <input type="textarea" class="form-control" formControlName="description" class="input">
-              <div class="line-box">
-              </div>
-            </div>
-      <button type="submit" id="sendbutton">ENVIAR</button>
-    </form>
-  </div>
+    <div class="row">
+      <div class="col-12" [hidden]="!hideData">
+<app-user-concerthall-form></app-user-concerthall-form>
+</div>
 </div>
 </div>
 

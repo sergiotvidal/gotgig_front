@@ -48,7 +48,7 @@ export class UserService {
       website: data.website,
       phone_number: data.phone_number,
       address: data.street + ' ' + data.number + ' ' +  data.zip + ' ' + data.city,
-    })
+    });
 
   }
 
