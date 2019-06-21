@@ -8,7 +8,7 @@
   </agm-snazzy-info-window>
   <div *ngFor="let local of searchService.searchData.concerthallsData">
     <agm-marker [latitude]="local.lat" [longitude]="local.lng">
-      <agm-snazzy-info-window [maxWidth]="800" [closeWhenOthersOpen]="true">
+      <agm-snazzy-info-window [maxWidth]="400" [closeWhenOthersOpen]="true">
         <ng-template>
           <h5 class="card-title" style="font-family: Courier"> <strong> {{ local.full_name }} </strong></h5>
           <h6 class="card-subtitle mb-2 text-muted">{{ local.description }}</h6>

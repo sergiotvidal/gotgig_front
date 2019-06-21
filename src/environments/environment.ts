@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   GOOGLEMAPS_API_KEY: 'AIzaSyBWOGxMpnVWRlwZne4nLosX6Rf69UFsRpU',
-  apiBaseUrl: 'https://gotgig-project.herokuapp.com/api'
+  apiBaseUrl: 'http://localhost:3005/api'
 };
 
 /*

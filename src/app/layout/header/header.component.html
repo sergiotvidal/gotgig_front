@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark" style="background-color: black;">
     <a class="navbar-brand ml-3 justify-content-left" href="#" style="color: #fdd007; font-family: GothamHTFBold;">
       <i></i> GOTGIG</a>
-      <div *ngIf="authservice.authInfo.accessToken">
+      <div *ngIf="authservice.authInfo.accessToken; else elseBlock">
       <div *ngFor="let organization of userService.userData.organizationData">
       <h5 class="justify-content-right mt-1 mr-3" style="font-family: Courier; font-size: 0.7rem; color: #fdd007">
       ¡Bienvenido
@@ -9,12 +9,13 @@
     </h5>
     </div>
     </div>
-    <div #elseBlock>
+    <ng-template
+     #elseBlock>
         <h5 class="justify-content-right mt-1 mr-3" style="font-family: Courier; font-size: 0.7rem; color: #fdd007">
         ¿Quieres que tu local salga en el mapa?
         <a style="font-family: Courier; font-size: 0.7rem; color: #ccaa13" href='/register'>Registrate
         </a> o <a style="font-family: Courier; font-size: 0.7rem; color: #ccaa13" href='/login'>logueate</a>
       </h5>
-    </div>
+    </ng-template>
 </nav>
 <hr style="height:15px;border:none;color:#fdd007;background-color:#fdd007; margin:0;" />

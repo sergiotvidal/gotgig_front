@@ -47,7 +47,7 @@ export class UserFormsComponent {
      this.concerthallForm.value;
 
     if (this.concerthallForm.valid) {
-      this.userService.addConcerthall({full_name, street, number, zip, website,  phone_number, description, city  }).subscribe(() => {
+      this.userService.addConcerthall({ full_name, street, number, zip, website,  phone_number, description, city  }).subscribe(() => {
           this.router.navigate(['/user'])
       });
     }
@@ -67,6 +67,6 @@ export class UserFormsComponent {
 
   deleteConcert(idConcert,idConcerthall) {
     this.userService.deleteConcert(idConcert, idConcerthall).subscribe();
-    this.router.navigate(['/user'])
+    // this.router.navigate(['/user'])
   }
 }
