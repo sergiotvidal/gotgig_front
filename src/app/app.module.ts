@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from './layout/layout.module';
 import { CoreModule } from './core/core.module';
-import { AppInitializerModule } from './app-initializer.module';
+// import { AppInitializerModule } from './app-initializer.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { AppInitializerModule } from './app-initializer.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AppInitializerModule,
+    // AppInitializerModule,
     HttpClientModule,
     LayoutModule,
     CoreModule,
