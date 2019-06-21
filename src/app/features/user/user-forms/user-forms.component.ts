@@ -35,7 +35,7 @@ export class UserFormsComponent {
 
   deleteConcerthall(idConcerthall) {
     this.userService.deleteConcerthall(idConcerthall).subscribe();
-    this.router.navigate(['/user']);
+    this.refresh();
   }
 
   editConcert() {
@@ -44,6 +44,11 @@ export class UserFormsComponent {
 
   deleteConcert(idConcert,idConcerthall) {
     this.userService.deleteConcert(idConcert, idConcerthall).subscribe();
-    this.router.navigate(['/user'])
+    this.refresh();
+  }
+
+  refresh(): void {
+    window.location.reload();
   }
 }
+

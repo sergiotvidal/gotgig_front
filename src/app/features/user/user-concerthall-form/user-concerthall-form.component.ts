@@ -31,6 +31,13 @@ export class UserConcerthallFormComponent implements OnInit {
 
     if (this.concerthallForm.valid) {
       this.userService.addConcerthall({ full_name, street, number, zip, website,  phone_number, description, city  }).subscribe();
+      this.userService.getUserData();
+      this.refresh();
+
     }
+  }
+
+  refresh(): void {
+    window.location.reload();
   }
 }

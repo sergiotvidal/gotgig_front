@@ -72,11 +72,11 @@
                 <div class="form-group">
                   <label style="font-family: Courier">DESCRIPCIÓN</label>
                     <textarea  class="form-control" formControlName="description"></textarea>
-                    <div class="line-box">
+                    <div>
                     </div>
                 </div>
 
-            <button type="submit" type="button" class="btn btn-primary" id="sendbutton" [routerLink]="['/user']" routerLinkActive="router-link-active" >ENVIAR</button>
+            <button type="submit" type="button" class="btn btn-primary" id="sendbutton" (click)="addConcerthall()">ENVIAR</button>
         </form>
       </div>
   </div>
