@@ -7,6 +7,7 @@ import { ValidationMessagesComponent } from './validation-messages/validation-me
 import { MarkAsTouchedDirective } from './directives/mark-as-touched.directive';
 import { MailValidator } from './validators/mail.validator';
 import { MatchPasswordValidator } from './validators/match-password.validator';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [RegisterComponent,
@@ -15,7 +16,7 @@ import { MatchPasswordValidator } from './validators/match-password.validator';
     MarkAsTouchedDirective,
     ],
   imports: [
-    CommonModule, ReactiveFormsModule
+    CommonModule, ReactiveFormsModule, RouterModule
   ],
   exports: [RegisterComponent,
     LoginComponent,

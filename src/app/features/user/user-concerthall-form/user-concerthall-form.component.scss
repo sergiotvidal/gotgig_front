@@ -1,0 +1,24 @@
+.input {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.line-box {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background: #BCBCBC;
+}
+
+button {
+  padding: 0.5rem 0.7rem;
+  margin: 0;
+  font-family: Courier;
+  font-size: 0.7rem;
+  background-color: #fdd007;
+  border: 0;
+  color: black;
+}

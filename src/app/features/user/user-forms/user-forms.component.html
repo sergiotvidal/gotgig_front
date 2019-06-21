@@ -1,8 +1,12 @@
 <div class="container" >
   <div class="row">
-    <div class="col-8" style="padding-bottom: 1rem; font-family: GothamHTFBold;">
-      <h3> {{ userService.userData.organizationData[0].full_name }}
-      <button (click)="showConcerthallForm()" type="button" class="btn btn-success float-right mt-2"> <i class="fas fa-plus"></i> Sala</button></h3>
+    <div class="col-8" style="padding-bottom: 1rem; font-family: GothamHTFBold; font-size: 2rem;">
+      <span> {{ userService.userData.organizationData[0].full_name }}
+        <div *ngIf=showForm>
+         <button (click)="showConcerthallForm()" type="button" class="btn btn-success float-right mt-2"> <i class="fas fa-plus"></i> Sala</button></div>
+         <div *ngIf=!showForm>
+            <button (click)="showConcerthallForm()" type="button" class="btn btn-success float-right mt-2">Cerrar</button></div>
+        </span>
     </div>
   </div>
   <div [hidden]="!showForm"  *ngFor="let local of userService.userData.concerthallsData">
@@ -11,7 +15,7 @@
           <span><h3 style="display: inline-block;padding-right: 10px">{{ local.full_name }} </h3>
             <i (click)="editConcerthall()" style="display: inline-block; cursor: pointer" class="fas fa-pen fa-sm"></i>
             &nbsp;&nbsp;
-            <i (click)="deleteConcerthall(local.id_localhall)" style="display: inline-block; cursor: pointer" class="fas fa-trash fa-sm"></i></span>
+            <i (click)="deleteConcerthall(local.id_localhall)" style="display: inline-block; cursor: pointer" class="fas fa-trash fa-sm" routerLink='/user'></i></span>
       </div>
   </div>
   <div class="row" style="padding-bottom: 1rem;" >
