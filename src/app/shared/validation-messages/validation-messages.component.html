@@ -1,14 +1,14 @@
 <ng-container *ngIf="control.dirty || control.touched">
     <div class="invalid-feedback" *ngIf="control.hasError('required')">
-      <i class="fa fa-exclamation-triangle"></i> Este campo es obligatorio
+      <i class="fa fa-exclamation-triangle"></i> Aquí vas a tener que poner algo porque si no, no voy a funcionar. ¿En serio tengo que explicarte esto? Ay señor, llévame pronto.
     </div>
 
     <div class="invalid-feedback" *ngIf="control.hasError('malformedMail')">
-      <i class="fa fa-exclamation-triangle"></i> Email incorrecto
+      <i class="fa fa-exclamation-triangle"></i> Tu email es deforme. Como tú.
     </div>
 
     <div class="invalid-feedback" *ngIf="control.hasError('missingArroba')">
-      <i class="fa fa-exclamation-triangle"></i> Que se te olvida la arroba. Vaya desgraciado.
+      <i class="fa fa-exclamation-triangle"></i> Un email lleva arroba. Espabila, desgraciado.
     </div>
 
     <div class="invalid-feedback" *ngIf="control.hasError('minlength')">
