@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
       },
         (error: PositionError) => console.log(error));
     } else {
-      alert("Geolocation is not supported by this browser.");
+      alert('Geolocation is not supported by this browser.');
     }
   }
 }

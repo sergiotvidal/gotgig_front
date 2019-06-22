@@ -34,7 +34,7 @@
               <div class="card bg-light mb-3" style="max-width: 18rem;">
                   <div class="card-body">
                     <h5 class="card-title" style="overflow: hidden">{{ concert.full_name }}
-                      <span (click)="deleteConcert(concert.id_concert, concert.id_localhall)" class="float-right" style="cursor: pointer" [routerLink]="['/user']" routerLinkActive="router-link-active">
+                      <span (click)="deleteConcert(concert.id_concert, concert.id_localhall)" class="float-right" style="cursor: pointer">
                         <i class="fas fa-trash fa-sm"></i></span>
                         <span (click)="editConcert()" style="cursor: pointer;padding-right: 1rem" class="float-right">
                           <i class="fas fa-pen fa-sm"></i></span></h5>

@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from './layout/layout.module';
 import { CoreModule } from './core/core.module';
 import { AppInitializerModule } from './app-initializer.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { AppInitializerModule } from './app-initializer.module';
     HttpClientModule,
     LayoutModule,
     CoreModule,
-
+    RouterModule
   ],
 
   providers: [],

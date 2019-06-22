@@ -1,13 +1,14 @@
 <div class="p-5">
-<agm-map style="height: 100vh; border: 2px" [latitude]="searchService.searchData.coordinates.lat" [longitude]="searchService.searchData.coordinates.lng" [zoom]=16>
-  <agm-marker [latitude]="searchService.searchData.coordinates.lat" [longitude]="searchService.searchData.coordinates.lng"></agm-marker>
+<agm-map style="height: 100vh; border: 2px" [latitude]="searchService.searchData.coordinates.lat" [longitude]="searchService.searchData.coordinates.lng" [zoom]=16 [styles]='styles'>
+  <agm-marker [iconUrl]="{ url: '../../../assets/map-person-82.png', scaledSize: { width: 40, height: 40 }}" [latitude]="searchService.searchData.coordinates.lat" [longitude]="searchService.searchData.coordinates.lng">
   <agm-snazzy-info-window [maxWidth]="800" [closeWhenOthersOpen]="true">
     <ng-template>
-      <h2 style="font-family: Courier;">Aquí estás tú</h2>
+      <h2 style="font-family: Courier; font-size: 1rem;">¡Estás aquí!</h2>
     </ng-template>
   </agm-snazzy-info-window>
+</agm-marker>
   <div *ngFor="let local of searchService.searchData.concerthallsData">
-    <agm-marker [latitude]="local.lat" [longitude]="local.lng">
+    <agm-marker [latitude]="local.lat" [longitude]="local.lng" [iconUrl]="{ url: '../../../assets/marker.png', scaledSize: { width: 40, height: 40 }}">
       <agm-snazzy-info-window [maxWidth]="400" [closeWhenOthersOpen]="true">
         <ng-template>
           <h5 class="card-title" style="font-family: Courier"> <strong> {{ local.full_name }} </strong></h5>
