@@ -22,4 +22,10 @@ export class WelcomeSearchBarComponent implements OnInit {
     this.searchService.search(this.inputElement.nativeElement.value).subscribe();
     this.router.navigate(['/search']);
   }
+
+  onKey(event: any) {
+     if (event.keyCode === 13){
+       this.search();
+     }
+  }
 }

@@ -7,29 +7,8 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
   constructor(private searchService: SearchService, private router: Router) {}
   title = 'gotgigfront';
-
-  public lat;
-  public lng;
-
-  public ngOnInit() {
-    this.getLocation();
-  }
-
-  getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position: Position) => {
-        if (position) {
-          this.searchService.search('', position.coords.latitude, position.coords.longitude).subscribe(),
-          this.router.navigate(['/search']);
-        }
-      },
-        (error: PositionError) => console.log(error));
-    } else {
-      alert('Geolocation is not supported by this browser.');
-    }
-  }
 }

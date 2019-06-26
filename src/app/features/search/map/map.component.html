@@ -1,5 +1,5 @@
 <div class="p-5">
-<agm-map style="height: 100vh; border: 2px" [latitude]="searchService.searchData.coordinates.lat" [longitude]="searchService.searchData.coordinates.lng" [zoom]=16 [styles]='styles'>
+<agm-map style="height: 100vh; border: 2px" [latitude]="+searchService.searchData.coordinates.lat" [longitude]="+searchService.searchData.coordinates.lng" [zoom]=16 [styles]='styles'>
   <agm-marker [iconUrl]="{ url: '../../../assets/map-person-82.png', scaledSize: { width: 40, height: 40 }}" [latitude]="searchService.searchData.coordinates.lat" [longitude]="searchService.searchData.coordinates.lng">
   <agm-snazzy-info-window [maxWidth]="800" [closeWhenOthersOpen]="true">
     <ng-template>

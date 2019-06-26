@@ -12,6 +12,8 @@ export interface ConcerthallsData {
 
 export interface ConcertsData {
   id_localhall: number;
+  id_concert: number;
+  full_name: string;
   date: Date;
   tickets?: string;
   band: string;

@@ -9,8 +9,12 @@ import { UserService } from '../../core/services/user.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public authservice: AuthService, public userService: UserService) { }
+  constructor(public authService: AuthService, public userService: UserService) { }
 
+
+  showUserDetails(){
+    return this.userService.userData && this.authService.authInfo && this.authService.authInfo.accessToken;
+  }
   ngOnInit() {}
 
 }

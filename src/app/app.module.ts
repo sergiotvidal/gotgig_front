@@ -8,6 +8,8 @@ import { LayoutModule } from './layout/layout.module';
 import { CoreModule } from './core/core.module';
 import { AppInitializerModule } from './app-initializer.module';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     LayoutModule,
     CoreModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    SharedModule
   ],
 
   providers: [],

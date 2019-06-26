@@ -6,6 +6,8 @@ import { AuthService } from '../../../core/services/auth.service';
 import { Router } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { ModalFormService } from '../../../core/services/modal-form.service';
+import { ConcertsData } from '../../../core/core.models';
 
 @NgModule({
   imports: [FormsModule, ReactiveFormsModule],
@@ -19,11 +21,8 @@ export class UserFormsComponent {
 
   showForm = true;
   hideData = false;
-  constructor(public userService: UserService, private router: Router,
-    private fb: FormBuilder) { }
 
-  ngOnInit() {
-  }
+  constructor(public userService: UserService, public modalformService: ModalFormService) { }
 
   showConcerthallForm() {
     this.hideData = !this.hideData;
@@ -34,17 +33,21 @@ export class UserFormsComponent {
   }
 
   deleteConcerthall(idConcerthall) {
-    this.userService.deleteConcerthall(idConcerthall).subscribe();
-    this.refresh();
+    this.userService.deleteConcerthall(idConcerthall).subscribe((data) => {
+      const locals = this.userService.userData.concerthallsData.filter(local => local.id_localhall !== idConcerthall);
+      this.userService.userData.concerthallsData = locals;
+    });
   }
 
   editConcert() {
 
   }
 
-  deleteConcert(idConcert,idConcerthall) {
-    this.userService.deleteConcert(idConcert, idConcerthall).subscribe();
-    this.refresh();
+  deleteConcert(idConcert, idConcerthall) {
+    this.userService.deleteConcert(idConcert, idConcerthall).subscribe((data)=>{
+      const concerts = this.userService.userData.concertsData.filter(concert => concert.id_concert !== idConcert);
+      this.userService.userData.concertsData = concerts;
+    });
   }
 
   refresh(): void {

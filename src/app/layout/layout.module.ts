@@ -4,11 +4,16 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { RouterModule } from '@angular/router';
+import { ModalComponent } from './modal/modal.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, MainLayoutComponent],
+  declarations: [HeaderComponent, FooterComponent, MainLayoutComponent, ModalComponent],
   imports: [
     CommonModule, RouterModule
+  ],
+  exports: [
+    ModalComponent
   ]
 })
 export class LayoutModule { }

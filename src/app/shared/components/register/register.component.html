@@ -34,9 +34,10 @@
             <input type="password" class="form-control" formControlName="confirmPassword" class="input">
             <div class="line-box">
             </div>
-        <app-validation-messages [control]="registerForm.get('confirmPassword')"></app-validation-messages>
+        <app-validation-messages [control]="registerForm.get('confirmPassword')" [control]="registerForm.get('confirmPassword')"></app-validation-messages>
         </div>
 
         <button type="submit" id="sendbutton">ENVIAR</button>
       </form>
     </div>
+<app-modal></app-modal>

@@ -6,6 +6,7 @@ import { UserFormsComponent } from './user-forms/user-forms.component';
 import { AsideComponent } from './aside/aside.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UserConcerthallFormComponent } from './user-concerthall-form/user-concerthall-form.component';
+import { ModalConcertFormComponent } from './modal-concert-form/modal-concert-form.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [UserComponent, UserFormsComponent, AsideComponent, UserConcerthallFormComponent],
+  declarations: [UserComponent, UserFormsComponent, AsideComponent, UserConcerthallFormComponent, ModalConcertFormComponent],
   imports: [
     CommonModule, RouterModule.forChild(routes), ReactiveFormsModule, RouterModule
   ]

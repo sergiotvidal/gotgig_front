@@ -26,7 +26,8 @@
             <li>Teléfono: {{ local.phone_number }}</li>
             <li>Descripción del local: {{ local.description }}</li>
           </ul>
-        <button type="button" class="btn btn-success btn-sm float-right"><i class="fas fa-plus"></i> Concierto </button>
+        <button type="button" class="btn btn-success btn-sm float-right" (click)="modalformService.open()"><i class="fas fa-plus"></i> Concierto </button>
+        <app-modal-concert-form [idLocal]="local.id_localhall"></app-modal-concert-form>
       </div>
       <div class="col-4" style="background-color: rgb(241, 241, 241)">
           <div *ngFor="let concert of userService.userData.concertsData">
@@ -58,4 +59,5 @@
 </div>
 </div>
 </div>
+
 

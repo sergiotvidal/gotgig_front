@@ -13,6 +13,20 @@ export class WelcomeComponent implements OnInit {
   constructor(public formsService: FormsService, private searchService: SearchService, private router: Router) { }
 
   ngOnInit() {
+    this.getLocation();
+  }
 
+  getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position: Position) => {
+        if (position) {
+          this.searchService.search('', position.coords.latitude, position.coords.longitude).subscribe(),
+          this.router.navigate(['/search']);
+        }
+      },
+        (error: PositionError) => console.log(error));
+    } else {
+      alert('Geolocation is not supported by this browser.');
+    }
   }
 }

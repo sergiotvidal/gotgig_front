@@ -10,6 +10,7 @@ loginOpened = false;
 
   registerOpen() {
     this.registerOpened = true;
+    this.loginOpened = false;
   }
 
   registerClose() {
@@ -18,6 +19,7 @@ loginOpened = false;
 
   loginOpen() {
     this.loginOpened = true;
+    this.registerOpened = false;
   }
 
   loginClose() {

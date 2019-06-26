@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
   templateUrl: './user-concerthall-form.component.html',
   styleUrls: ['./user-concerthall-form.component.scss']
 })
-export class UserConcerthallFormComponent implements OnInit {
+export class UserConcerthallFormComponent {
   concerthallForm = this.fb.group({
     full_name: ['', [Validators.minLength(2), Validators.required]],
     street: ['', [Validators.required]],
-    number: ['', [Validators.required]],
+    number: [''],
     city: ['', [Validators.required]],
     zip: ['', [Validators.required]],
     phone_number: [''],
@@ -22,9 +22,6 @@ export class UserConcerthallFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder, public userService: UserService, private router: Router) { }
 
-  ngOnInit() {
-  }
-
   addConcerthall() {
     const { full_name, street, number, zip, website,  phone_number, description, city } =
      this.concerthallForm.value;
@@ -32,7 +29,9 @@ export class UserConcerthallFormComponent implements OnInit {
     if (this.concerthallForm.valid) {
       this.userService.addConcerthall({ full_name, street, number, zip, website,  phone_number, description, city  }).subscribe();
       this.userService.getUserData();
-      this.refresh();
+      setTimeout(() => {
+        this.refresh();
+      }, 500);
 
     }
   }

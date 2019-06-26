@@ -4,6 +4,7 @@ import { MatchPasswordValidator } from '../../validators/match-password.validato
 import { AuthService } from '../../../core/services/auth.service';
 import { FormsService } from 'src/app/core/services/forms.service';
 import { MailValidator } from '../../validators/mail.validator';
+import { ModalService } from '../../../core/services/modal.service';
 
 @Component({
   selector: 'app-register',
@@ -19,8 +20,9 @@ export class RegisterComponent {
   },
   { validators: MatchPasswordValidator });
   constructor(private fb: FormBuilder,
-    private authService: AuthService,
-    public formsService: FormsService) { }
+              private authService: AuthService,
+              public formsService: FormsService,
+              private modalService: ModalService) { }
 
   register() {
     const { full_name, email, password } = this.registerForm.value;
@@ -28,6 +30,8 @@ export class RegisterComponent {
     if (this.registerForm.valid) {
       this.authService.register({ full_name, email, password }).subscribe(() => {
         this.registerForm.reset();
+        this.modalService.open('Gracias por registrarte :D',
+        'Comprueba la bandeja de entrada de tu email y sigue las instrucciones para activar tu cuenta');
       });
     }
   }

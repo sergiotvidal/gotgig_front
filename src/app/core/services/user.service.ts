@@ -17,6 +17,7 @@ export class UserService {
     return this.http.get(`${environment.apiBaseUrl}/user/organization`)
     .pipe(tap((results: UserData) => (this.userData = results)));
   }
+
   updateUserOrganization(profile) {
     return this.http.put(`${environment.apiBaseUrl}/user/organization`, profile).pipe(
       tap(() => {
@@ -27,6 +28,7 @@ export class UserService {
       })
     );
   }
+
   deleteUserOrganization() {
     return this.http.delete(`${environment.apiBaseUrl}/user/organization`);
   }
@@ -36,7 +38,7 @@ export class UserService {
   }
 
   deleteConcerthall(idConcerthall) {
-    return this.http.delete(`${environment.apiBaseUrl}/user/concerthall/${idConcerthall}`)
+    return this.http.delete(`${environment.apiBaseUrl}/user/concerthall/${idConcerthall}`);
   }
 
   addConcerthall(data) {
@@ -48,6 +50,19 @@ export class UserService {
       website: data.website,
       phone_number: data.phone_number,
       address: data.street + ' ' + data.number + ' ' +  data.zip + ' ' + data.city,
+    });
+
+  }
+
+  addConcert(data) {
+    return this.http
+    .post(`${environment.apiBaseUrl}/user/concert/${data.idLocal}`, {
+      band: data.band,
+      date: data.date + ' ' + data.hour,
+      tickets: data.tickets,
+      style: data.style,
+      website: data.website,
+      description: data.description,
     });
 
   }

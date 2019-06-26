@@ -12,12 +12,15 @@ export class SearchService {
   searchData: SearchData;
 
   constructor(private http: HttpClient) {
-    this.searchData = JSON.parse(localStorage.getItem('searchData'));
+    const localStorageSearchData = JSON.parse(localStorage.getItem('searchData'));
+    this.searchData = localStorageSearchData ? localStorageSearchData : {};
    }
 
   search(location?: string, lat?, lng?) {
-    localStorage.removeItem('searchData');
-    this.searchData = null;
+    if (localStorage.searchData) {
+      localStorage.removeItem('searchData');
+    }
+
     return this.http.get(`${environment.apiBaseUrl}/search`, {
       params: {
         location,

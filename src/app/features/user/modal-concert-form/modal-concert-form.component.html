@@ -1,0 +1,94 @@
+<div class="modal" *ngIf="modalFormService.opened">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <button type="button" class="close" (click)="modalFormService.close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      <div class="modal-body">
+        <div class="row justify-content-center">
+          <div class="col-8">
+              <form
+              [formGroup]="concertForm"
+              (ngSubmit)="addConcert(idLocal.value)"
+              >
+                <div class="row">
+                  <div class="col-6">
+                      <div class="form-group">
+                          <label style="font-family: Courier">NOMBRE BANDA</label>
+                            <input type="text" class="form-control" formControlName="band" class="input">
+                            <div class="line-box">
+                            </div>
+                      </div>
+                  </div>
+                  <div class="col-6">
+                      <div class="form-group">
+                          <label style="font-family: Courier">FECHA</label>
+                            <input type="date" class="form-control" formControlName="date" class="input" placeholder="DD/MM/YYYY">
+                            <div class="line-box">
+                            </div>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-6">
+
+                        <div class="form-group">
+                            <label style="font-family: Courier">ESTILO</label>
+                              <input type="text" class="form-control" formControlName="style" class="input">
+                              <div class="line-box"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-6">
+
+                        <div class="form-group">
+                            <label style="font-family: Courier">HORA</label>
+                              <input type="time" class="form-control" formControlName="hour" class="input" placeholder="HH:MM">
+                              <div class="line-box"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+
+                      <div class="col-6">
+
+                          <div class="form-group">
+                              <label style="font-family: Courier">PRECIO ENTRADAS</label>
+                                <input type="text" class="form-control" formControlName="tickets" class="input">
+                                <div class="line-box"></div>
+                          </div>
+
+                      </div>
+
+                      <div class="col-6">
+
+                        <div class="form-group">
+                            <label style="font-family: Courier">WEB</label>
+                              <input type="text" class="form-control" formControlName="website" class="input">
+                              <div class="line-box"></div>
+                        </div>
+
+                      </div>
+                      <div class="form-group">
+                        <label style="font-family: Courier">DESCRIPCIÓN</label>
+                          <textarea  class="form-control" formControlName="description"></textarea>
+                      </div>
+                  </div>
+                  </form>
+      <div class="modal-footer">
+        <button
+          type="submit"
+          class="btn btn-secondary"
+          (click)="addConcert(idLocal)"
+        >
+          Añadir
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
