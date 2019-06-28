@@ -41,9 +41,9 @@ export class ConcerthallsComponent {
       return '¡Hoy hay concierto!'
     }
 
-    const timeInDays = timeDiff / 86400000
+    const timeInDays = timeDiff / 86400000;
 
-    return `Próximo concierto en ${Math.floor(timeInDays)} días`
+    return `Próximo concierto en ${Math.ceil(timeInDays)} días`
 
   }
 

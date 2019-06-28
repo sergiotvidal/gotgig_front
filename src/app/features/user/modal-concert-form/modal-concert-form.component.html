@@ -6,7 +6,7 @@
         </button>
       <div class="modal-body">
         <div class="row justify-content-center">
-          <div class="col-8">
+          <div class="col-12">
               <form
               [formGroup]="concertForm"
               (ngSubmit)="addConcert(idLocal.value)"
@@ -46,7 +46,7 @@
 
                         <div class="form-group">
                             <label style="font-family: Courier">HORA</label>
-                              <input type="time" class="form-control" formControlName="hour" class="input" placeholder="HH:MM">
+                              <input type="time" class="without" formControlName="hour" class="input" placeholder="HH:MM">
                               <div class="line-box"></div>
                         </div>
 
@@ -74,10 +74,14 @@
                         </div>
 
                       </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
                       <div class="form-group">
                         <label style="font-family: Courier">DESCRIPCIÓN</label>
                           <textarea  class="form-control" formControlName="description"></textarea>
                       </div>
+                    </div>
                   </div>
                   </form>
       <div class="modal-footer">

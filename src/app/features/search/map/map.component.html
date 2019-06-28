@@ -1,5 +1,5 @@
-<div class="p-5">
-<agm-map style="height: 100vh; border: 2px" [latitude]="+searchService.searchData.coordinates.lat" [longitude]="+searchService.searchData.coordinates.lng" [zoom]=16 [styles]='styles'>
+<div class="p-2">
+<agm-map style="height: 90vh; border: 2px;width: 60vw" [latitude]="+searchService.searchData.coordinates.lat" [longitude]="+searchService.searchData.coordinates.lng" [zoom]=16 [styles]='styles'>
   <agm-marker [iconUrl]="{ url: '../../../assets/map-person-82.png', scaledSize: { width: 40, height: 40 }}" [latitude]="searchService.searchData.coordinates.lat" [longitude]="searchService.searchData.coordinates.lng">
   <agm-snazzy-info-window [maxWidth]="800" [closeWhenOthersOpen]="true">
     <ng-template>
@@ -15,10 +15,10 @@
           <h6 class="card-subtitle mb-2 text-muted">{{ local.description }}</h6>
           <div *ngFor="let concert of searchService.searchData.concertsData">
             <div *ngIf="local.id_localhall === concert.id_localhall">
-              <div class="card bg-light mb-3" style="max-width: 18rem;">
+              <div class="card bg-light mb-3" style="max-width: 18rem; border: 0;">
                   <div class="card-body">
                     <h5 class="card-title">{{ concert.band }}</h5>
-                    <p class="card-text">Fecha: {{ concert.date | date:'dd/MM/yy, hh:mm a' }}</p>
+                    <p class="card-text">Fecha: {{ editTime(concert.date) }}</p>
                     <p class="card-text" *ngIf="concert.tickets">Entradas: {{ concert.tickets }}</p>
                     <p class="card-text" *ngIf="concert.style">Estilo: {{ concert.style }}</p>
                     <p class="card-text" *ngIf="concert.description">Descripción: {{ concert.description }}</p>

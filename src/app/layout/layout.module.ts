@@ -13,7 +13,7 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule, RouterModule
   ],
   exports: [
-    ModalComponent
+    ModalComponent, FooterComponent
   ]
 })
 export class LayoutModule { }

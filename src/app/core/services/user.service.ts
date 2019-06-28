@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { tap } from 'rxjs/operators';
 import { UserData } from '../core.models';
-
+import {
+  HttpRequest
+} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -66,5 +68,18 @@ export class UserService {
     });
 
   }
+
+  addAvatar(file:File){
+
+    const formData = new FormData();
+    formData.append('avatar', file);
+
+
+    return this.http.post(`${environment.apiBaseUrl}/user/avatar`, formData, {
+      observe: 'response'
+    });
+
+
+}
 
 }

@@ -10,6 +10,7 @@ import { MapComponent } from './map/map.component';
 import { environment } from '../../../environments/environment';
 import { SearchComponent } from './search/search.component';
 import { ConcerthallsComponent } from './concerthalls/concerthalls.component';
+import { LayoutModule } from '../../layout/layout.module';
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
       apiKey: environment.GOOGLEMAPS_API_KEY,
     }),
     AgmSnazzyInfoWindowModule,
+    LayoutModule
   ]
 })
 export class SearchModule { }

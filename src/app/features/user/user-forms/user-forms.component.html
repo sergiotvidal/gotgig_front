@@ -13,7 +13,7 @@
   <div class="row">
       <div class="col-8" style="background-color: rgb(241, 241, 241)">
           <span><h3 style="display: inline-block;padding-right: 10px">{{ local.full_name }} </h3>
-            <i (click)="editConcerthall()" style="display: inline-block; cursor: pointer" class="fas fa-pen fa-sm"></i>
+            <!-- <i (click)="editConcerthall()" style="display: inline-block; cursor: pointer" class="fas fa-pen fa-sm"></i> -->
             &nbsp;&nbsp;
             <i (click)="deleteConcerthall(local.id_localhall)" style="display: inline-block; cursor: pointer" class="fas fa-trash fa-sm"></i></span>
       </div>
@@ -38,8 +38,9 @@
                       <span (click)="deleteConcert(concert.id_concert, concert.id_localhall)" class="float-right" style="cursor: pointer">
                         <i class="fas fa-trash fa-sm"></i></span>
                         <span (click)="editConcert()" style="cursor: pointer;padding-right: 1rem" class="float-right">
-                          <i class="fas fa-pen fa-sm"></i></span></h5>
-                    <p class="card-text">Fecha: {{ concert.date | date:'dd/MM/yy, hh:mm a' }}</p>
+                          <!-- <i class="fas fa-pen fa-sm"></i> -->
+                        </span></h5>
+                    <p class="card-text">Fecha: {{ editTime(concert.date) }}</p>
                     <p class="card-text">Entradas: {{ concert.tickets }}</p>
                     <p class="card-text">Estilo: {{ concert.style }}</p>
                     <p class="card-text">Descripción: {{ concert.description }}</p>

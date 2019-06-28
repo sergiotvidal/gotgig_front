@@ -43,6 +43,11 @@ export class UserFormsComponent {
 
   }
 
+  editTime(date){
+      const fecha = date.substring(0, 16).replace('T', ' ');
+      return fecha.substring(8,10)  + '-' + fecha.substring(5,7)  + '-' + fecha.substring(0,4)  + ' ' + fecha.substring(10,16);
+  }
+
   deleteConcert(idConcert, idConcerthall) {
     this.userService.deleteConcert(idConcert, idConcerthall).subscribe((data)=>{
       const concerts = this.userService.userData.concertsData.filter(concert => concert.id_concert !== idConcert);

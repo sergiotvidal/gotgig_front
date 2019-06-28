@@ -1,12 +1,20 @@
 <div class="container">
   <div class="row justify-content-center align-self-center">
-    <div class="col-lg-12 col-sm-12" style="padding-top: 70px">
+    <div class="col-lg-12 col-sm-12" style="padding-top: 93px">
             <div class="card hovercard" >
                 <div class="cardheader">
 
                 </div>
                 <div class="avatar">
-                    <img alt="" src="https://www.ecestaticos.com/imagestatic/clipping/3ac/eaa/3aceaa44d745eceae289bf23c593367c/por-que-josep-pedrerol-no-esta-presentando-jugones-ni-el-chiringuito.jpg?mtime=1553691035">
+                    <input
+                        style="display: none"
+                        #imageInput
+                        #upload_avatar
+                        type="file"
+                        accept="image/*"
+                        (change)="processFile(imageInput)"
+  />
+                    <img alt="" style="cursor: pointer" (click)="upload_avatar.click()" src="{{ imageUrl }}">
                 </div>
                 <div class="info">
                     <div class="title">

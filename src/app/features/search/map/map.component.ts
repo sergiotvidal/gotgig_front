@@ -9,8 +9,12 @@ import { Local } from 'protractor/built/driverProviders';
 })
 export class MapComponent {
 
+  centerLat: any = +this.searchService.searchData.coordinates.lat;
+  centerLng: any = +this.searchService.searchData.coordinates.lng;
+
   constructor(public searchService: SearchService) {
   }
+
   styles = [
     {
       "elementType": "geometry",
@@ -220,5 +224,10 @@ export class MapComponent {
       ]
     }
   ]
+
+  editTime(date){
+    const fecha = date.substring(0, 16).replace('T', ' ');
+    return fecha.substring(8,10)  + '-' + fecha.substring(5,7)  + '-' + fecha.substring(0,4)  + ' ' + fecha.substring(10,16);
+}
 
 }
